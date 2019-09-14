@@ -9,33 +9,35 @@ public class ReportCard {
         String subject2 = "Maths";
         String subject3 = "Science";
 
-        Scanner scanner = new Scanner(System.in);
+        for (int counter = 0; counter < 3; counter++) {
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter name of student: ");
-        String studentName = scanner.nextLine();
+            System.out.println("Enter name of student: ");
+            String studentName = scanner.nextLine();
 
-        System.out.println("Enter marks in English: ");
-        int marksInEnglish = scanner.nextInt();
-        System.out.println("Enter marks in Maths: ");
-        int marksInMaths = scanner.nextInt();
-        System.out.println("Enter marks in Science: ");
-        int marksInScience = scanner.nextInt();
-        String gradesInEnglish = calculateGrade(marksInEnglish);
-        String gradesInMaths = calculateGrade(marksInMaths);
-        String gradesInScience = calculateGrade(marksInScience);
+            System.out.println("Enter marks in English: ");
+            int marksInEnglish = scanner.nextInt();
+            System.out.println("Enter marks in Maths: ");
+            int marksInMaths = scanner.nextInt();
+            System.out.println("Enter marks in Science: ");
+            int marksInScience = scanner.nextInt();
+            String gradesInEnglish = calculateGrade(marksInEnglish);
+            String gradesInMaths = calculateGrade(marksInMaths);
+            String gradesInScience = calculateGrade(marksInScience);
 
-        int totalMarks = marksInEnglish + marksInMaths + marksInScience;
-        String gradeInTotal = calculateTotalGrades(gradesInEnglish, gradesInMaths, gradesInScience, totalMarks);
+            int totalMarks = marksInEnglish + marksInMaths + marksInScience;
+            String gradeInTotal = calculateTotalGrades(gradesInEnglish, gradesInMaths, gradesInScience, totalMarks);
 
-        System.out.println(studentName);
-        System.out.println("Subject        Marks    Grades");
-        System.out.println(subject1 + "        " + marksInEnglish + "       " + gradesInEnglish);
-        System.out.println(subject2 + "          " + marksInMaths + "       " + gradesInMaths);
-        System.out.println(subject3 + "        " + marksInScience + "       " + gradesInScience);
-        System.out.println("Total Marks" + "    " + totalMarks + "      " + gradeInTotal);
+            System.out.println(studentName);
+            System.out.println("Subject        Marks    Grades");
+            System.out.println(subject1 + "        " + marksInEnglish + "       " + gradesInEnglish);
+            System.out.println(subject2 + "          " + marksInMaths + "       " + gradesInMaths);
+            System.out.println(subject3 + "        " + marksInScience + "       " + gradesInScience);
+            System.out.println("Total Marks" + "    " + totalMarks + "      " + gradeInTotal);
 
-        String result = gradeInTotal.equals("F") ? "Fail" : "Pass";
-        System.out.println("Result: " + result);
+            String result = gradeInTotal.equals("F") ? "Fail" : "Pass";
+            System.out.println("Result: " + result);
+        }
     }
 
     public static String calculateGrade(int marks) {
